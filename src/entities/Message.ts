@@ -1,4 +1,4 @@
-import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryColumn, ManyToOne, JoinColumn } from "typeorm"
+import { Entity, Column, CreateDateColumn, PrimaryColumn, ManyToOne, JoinColumn } from "typeorm"
 
 import { v4 as uuid } from "uuid";
 import { User } from "./User";
@@ -17,7 +17,7 @@ class Message{
 
     @JoinColumn({name: "user_id"})
     @ManyToOne(()=> User)
-    User: User;
+    user: User;
 
     @Column()
     user_id: string;
